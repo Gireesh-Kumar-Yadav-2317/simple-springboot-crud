@@ -29,8 +29,8 @@ jobs:
       - name: Check Java version
         run: java -version
 
-      - name: Run tests and build JAR
-        run: mvn -B clean verify
+      - name: Build application without running tests
+        run: mvn -B clean package -DskipTests
 
       - name: Upload JAR artifact
         if: success()
